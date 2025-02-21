@@ -115,8 +115,16 @@ if [ -f /opt/honeypot-agent/HoneypotAgent ]; then
     # Запоминаем PID процесса
     HP_AGENT_PID=$!
 
-    # Ждем 2 секунды, чтобы убедиться, что программа не завершилась с ошибкой
+    # Ждём 2 секунды и выводим накопленный лог
     sleep 2
+    echo "honeypot_output.log:"
+    sudo tail -n 50 /opt/honeypot-agent/honeypot_output.log
+    
+    echo "✅ HoneypotAgent продолжает работу в фоне."
+    else
+        echo "❌ HoneypotAgent не найден по пути /opt/honeypot-agent/HoneypotAgent"
+        exit 1
+    fi
 
     # Проверяем, жив ли процесс
     if ! ps -p $HP_AGENT_PID > /dev/null; then
