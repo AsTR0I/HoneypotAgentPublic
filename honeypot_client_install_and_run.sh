@@ -108,23 +108,14 @@ echo "✅ Установка завершена."
 # Запуск программы от имени администратора
 if [ -f /opt/honeypot-agent/HoneypotAgent ]; then
     echo "🚀 Запускаем HoneypotAgent..."
-    sudo /opt/honeypot-agent/HoneypotAgent > /opt/honeypot-agent/honeypot_output.log 2>&1 &
-    tail -f /opt/honeypot-agent/honeypot_output.log
-
     
-    # Запоминаем PID процесса
+    # Запускаем в фоновом режиме и перенаправляем вывод в лог
+    sudo /opt/honeypot-agent/HoneypotAgent > /opt/honeypot-agent/honeypot_output.log 2>&1 &
+        # Запоминаем PID процесса
     HP_AGENT_PID=$!
 
-    # Ждём 2 секунды и выводим накопленный лог
+    # Ждем 2 секунды, чтобы убедиться, что программа не завершилась с ошибкой
     sleep 2
-    echo "honeypot_output.log:"
-    sudo tail -n 50 /opt/honeypot-agent/honeypot_output.log
-    
-    echo "✅ HoneypotAgent продолжает работу в фоне."
-    else
-        echo "❌ HoneypotAgent не найден по пути /opt/honeypot-agent/HoneypotAgent"
-        exit 1
-    fi
 
     # Проверяем, жив ли процесс
     if ! ps -p $HP_AGENT_PID > /dev/null; then
@@ -132,6 +123,8 @@ if [ -f /opt/honeypot-agent/HoneypotAgent ]; then
         cat /opt/honeypot-agent/honeypot_output.log
         exit 1
     fi
+
+    cat  /opt/honeypot-agent/honeypot_output.log
 
     echo "✅ HoneypotAgent успешно запущен."
 else
