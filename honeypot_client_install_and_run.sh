@@ -108,9 +108,9 @@ echo "✅ Установка завершена."
 # Запуск программы от имени администратора
 if [ -f /opt/honeypot-agent/HoneypotAgent ]; then
     echo "🚀 Запускаем HoneypotAgent..."
-    
-    # Запускаем в фоновом режиме и перенаправляем вывод в лог
     sudo /opt/honeypot-agent/HoneypotAgent > /opt/honeypot-agent/honeypot_output.log 2>&1 &
+    tail -f /opt/honeypot-agent/honeypot_output.log
+
     
     # Запоминаем PID процесса
     HP_AGENT_PID=$!
