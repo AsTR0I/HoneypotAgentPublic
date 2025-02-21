@@ -48,5 +48,5 @@
 
 2. Выкачиваем инсталятор и запускаем 
  ```bash
-    wget -qO honeypot_client_install_and_run.sh https://raw.githubusercontent.com/AsTR0I/HoneypotInstaller/main/honeypot_client_install_and_run.sh && chmod +x honeypot_client_install_and_run.sh && ./honeypot_client_install_and_run.sh
+    sudo bash <(curl -L https://raw.githubusercontent.com/AsTR0I/HoneypotInstaller/main/honeypot_client_install_and_run.sh)
    ```
