@@ -48,5 +48,5 @@
 
 2. Выкачиваем инсталятор и запускаем 
  ```bash
-    sudo bash <(curl -L https://raw.githubusercontent.com/AsTR0I/HoneypotInstaller/main/honeypot_client_install_and_run.sh)
+    sudo bash <(curl -L https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/refs/heads/main/honeypot_client_install_and_run.sh)
    ```

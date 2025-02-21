@@ -11,7 +11,7 @@ echo "🔍 Определена ОС: $OS"
 echo "🔍 Определена архитектура: $ARCH"
 
 # Ссылка на архив с токеном
-BASE_URL="https://raw.githubusercontent.com/AsTR0I/HoneypotAgent/refs/heads/main/honeypot-client/builds"
+BASE_URL="https://raw.githubusercontent.com/AsTR0I/HoneypotAgent/refs/heads/main/builds"
 
 # Определение ссылки для скачивания в зависимости от ОС и архитектуры
 if [ "$OS" == "Linux" ]; then
