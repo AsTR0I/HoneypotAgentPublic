@@ -51,8 +51,8 @@ Linux
 
 BSD
 ```bash
-    cd /opt && \
-fetch -o /opt/honeypot_client_install_and_run.sh https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/main/honeypot_client_install_and_run.sh && \
-chmod +x /opt/honeypot_client_install_and_run.sh && \
-sh /opt/honeypot_client_install_and_run.sh
+    cd /usr/local && \
+fetch -o honeypot_client_install_and_run.sh https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/main/honeypot_client_install_and_run.sh && \
+chmod +x honeypot_client_install_and_run.sh && \
+sh honeypot_client_install_and_run.sh
    ```
