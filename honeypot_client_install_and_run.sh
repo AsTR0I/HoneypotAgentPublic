@@ -16,7 +16,7 @@ BASE_URL="https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/refs/head
 # Определение ссылки для скачивания в зависимости от ОС и архитектуры
 if [ "$OS" == "Linux" ]; then
     case "$ARCH" in
-        "x86_64")
+        "x86_64" | "amd64")
             BIN_URL="${BASE_URL}/linux/amd64/HoneypotAgent.tar.gz"
             ;;
         "i386" | "i686")
@@ -29,7 +29,7 @@ if [ "$OS" == "Linux" ]; then
     esac
 elif [ "$OS" == "FreeBSD" ]; then
     case "$ARCH" in
-        "x86_64")
+        "x86_64" | "amd64")
             BIN_URL="${BASE_URL}/freebsd/amd64/HoneypotAgent.tar.gz"
             ;;
         "i386")
@@ -50,7 +50,11 @@ echo "🔗 Ссылка для загрузки архива: $BIN_URL"
 
 # Скачиваем архив
 echo "📥 Скачиваем архив..."
-curl -L -o HoneypotAgent.tar.gz "$BIN_URL" 2>&1 | tee -a install_log.txt
+if [ "$OS" == "Linux" ]; then
+    curl -L -o HoneypotAgent.tar.gz "$BIN_URL" 2>&1 | tee -a install_log.txt
+elif [ "$OS" == "FreeBSD" ]; then
+
+fi
 
 # Проверка скачивания
 if [ $? -eq 0 ]; then
