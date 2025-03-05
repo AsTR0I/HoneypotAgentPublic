@@ -50,7 +50,7 @@ Linux
    ```
 
 BSD
-``bash
+```bash
     cd /opt && \
 fetch -o /opt/honeypot_client_install_and_run.sh https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/main/honeypot_client_install_and_run.sh && \
 chmod +x /opt/honeypot_client_install_and_run.sh && \
