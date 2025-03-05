@@ -29,7 +29,7 @@ if [ "$OS" == "Linux" ]; then
             ;;
     esac
 elif [ "$OS" == "FreeBSD" ]; then
-    INSTALL_PATH="/usr/local/honeypot-agent"
+    INSTALL_PATH="/opt/honeypot-agent"
     case "$ARCH" in
         "x86_64" | "amd64")
             BIN_URL="${BASE_URL}/freebsd/amd64/HoneypotAgent.tar.gz"
