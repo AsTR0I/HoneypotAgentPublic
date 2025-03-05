@@ -40,8 +40,19 @@
 
 ## Установка (для Unix систем)
 
-1. Перемещаемся в нужную директорию, выкачиваем инсталятор и запускаем 
+1. Перемещаемся в нужную директорию, выкачиваем инсталятор и запускаем
+Linux
  ```bash
-    cd /opt && sudo curl -L -o /opt/honeypot_client_install_and_run.sh https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/main/honeypot_client_install_and_run.sh && sudo chmod +x /opt/honeypot_client_install_and_run.sh && sudo bash /opt/honeypot_client_install_and_run.sh
+    cd /opt && \
+ curl -L -o /opt/honeypot_client_install_and_run.sh https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/main/honeypot_client_install_and_run.sh && \
+ chmod +x /opt/honeypot_client_install_and_run.sh && \
+ sh /opt/honeypot_client_install_and_run.sh
+   ```
 
+BSD
+``bash
+    cd /opt && \
+fetch -o /opt/honeypot_client_install_and_run.sh https://raw.githubusercontent.com/AsTR0I/HoneypotAgentPublic/main/honeypot_client_install_and_run.sh && \
+chmod +x /opt/honeypot_client_install_and_run.sh && \
+sh /opt/honeypot_client_install_and_run.sh
    ```
