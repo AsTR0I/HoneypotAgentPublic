@@ -86,7 +86,7 @@ if [ ! -f "$CONFIG_PATH" ]; then
     "udp": [555,666]
   },
   "trigger": {
-    "url": "http://honey.cocobri.ru:8088/add-host?token=95a62fbd-76e3-46f2-b454-12d22679916f"
+    "url": "http://honey.cocobri.ru:8088/add-host?"
   }
 }' > "$CONFIG_PATH"
     echo "✅ Конфиг HoneypotAgent.json был успешно создан."
