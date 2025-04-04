@@ -1,0 +1,3 @@
+# Игнорируем файлы
+/logs/
+honeypot_client_install_and_run.sh
